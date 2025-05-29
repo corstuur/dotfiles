@@ -1,0 +1,30 @@
+# Aliases
+alias k=kubectl
+alias kctx=kubectx
+alias tf=terraform
+alias tfi='terraform init'
+alias tfp='terraform plan'
+alias tfa='terraform apply'
+
+# fzf
+source <(fzf --zsh)
+
+# glcoud
+if [ -f '/Users/cornelisstuurman/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/cornelisstuurman/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/Users/cornelisstuurman/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/cornelisstuurman/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+# carapace completion
+export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
+zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
+source <(carapace _carapace)
+
+# kubectl krew plugin manager
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+# starship
+eval "$(starship init zsh)"
+
+# zoxide
+eval "$(zoxide init zsh)"
+# zsh syntax highlighting
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

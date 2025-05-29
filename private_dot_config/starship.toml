@@ -1,0 +1,41 @@
+format = """
+$time\
+[](blue) \
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$cmd_duration\
+\n$character
+"""
+right_format = """
+$kubernetes
+"""
+
+[character]
+success_symbol = "[❯](green)"
+error_symbol = "[❯](red)"
+
+[kubernetes]
+disabled = false
+format = '[$symbol$context( \($namespace\))](green)'
+symbol = '󱃾'
+detect_env_vars	= ['KUBECONFIG']
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:blue"
+format = '[$time ]($style)'
+
+[git_branch]
+symbol = " "
+
+[git_commit]
+tag_symbol = '  '
+
+[directory]
+read_only = " 󰌾"
+home_symbol = ''
