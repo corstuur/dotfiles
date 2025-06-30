@@ -35,3 +35,6 @@ eval "$(direnv hook zsh)"
 
 # GNU sed path
 PATH="$HOMEBREW_PREFIX/opt/gnu-sed/libexec/gnubin:$PATH"
+
+# Increase history
+export HISTSIZE=10000
